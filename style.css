@@ -137,7 +137,7 @@ p  { color: var(--ink-soft); }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
-.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; padding-left: 80px; }
+.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; padding-left: 0; }
 .brand-logo { width: 126px; height: 126px; object-fit: contain; flex-shrink: 0; }
 
 .nav-desktop ul { display: flex; gap: 34px; }
@@ -513,7 +513,9 @@ p  { color: var(--ink-soft); }
 @media (max-width: 768px) {
   .section { padding: 80px 0; }
   .nav-desktop, .btn-header { display: none; }
-  .hamburger { display: flex; }
+  .header-inner { justify-content: center; }
+  .hamburger { display: flex; position: absolute; right: 24px; }
+  .brand-logo { width: 90px; height: 90px; }
   .hero { padding: 130px 0 70px; }
   .hero-meta { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .hero-badge { left: 0; bottom: 14px; padding: 14px 16px; max-width: 90%; }
