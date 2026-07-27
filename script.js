@@ -4,12 +4,29 @@
 (function () {
   'use strict';
 
-  /* ---------- Header scrolled state ---------- */
+/* ---------- Header scrolled / hide on scroll down ---------- */
   const header = document.getElementById('siteHeader');
   if (header) {
+    let lastScrollY = window.scrollY;
     const onScroll = () => {
-      if (window.scrollY > 30) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 30) {
+        header.classList.add('scrolled');
+        // scrolling DOWN – hide header
+        if (currentScrollY > lastScrollY && currentScrollY > 80) {
+          header.classList.add('hidden');
+        }
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      // scrolling UP – show header
+      if (currentScrollY < lastScrollY) {
+        header.classList.remove('hidden');
+      }
+      
+      lastScrollY = currentScrollY;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
