@@ -100,3 +100,22 @@
     yearEl.textContent = new Date().getFullYear();
   }
 })();
+const areas = document.querySelectorAll(".area");
+
+areas.forEach(area => {
+
+    const button = area.querySelector(".area-header");
+
+    button.addEventListener("click", () => {
+
+        const active = area.classList.contains("active");
+
+        areas.forEach(item => item.classList.remove("active"));
+
+        if(!active){
+            area.classList.add("active");
+        }
+
+    });
+
+});

@@ -137,11 +137,8 @@ p  { color: var(--ink-soft); }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
-.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.brand-logo { width: 42px; height: 42px; object-fit: contain; border-radius: 8px; flex-shrink: 0; }
-.brand-text { display: flex; flex-direction: column; line-height: 1.1; color: #fff; }
-.brand-text strong { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; letter-spacing: .01em; }
-.brand-text em { font-style: normal; font-size: .7rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-400); }
+.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; padding-left: 80px; }
+.brand-logo { width: 126px; height: 126px; object-fit: contain; flex-shrink: 0; }
 
 .nav-desktop ul { display: flex; gap: 34px; }
 .nav-desktop a {
@@ -156,7 +153,7 @@ p  { color: var(--ink-soft); }
 }
 .nav-desktop a:hover { color: #fff; }
 .nav-desktop a:hover::after { width: 100%; }
-.btn-header { padding: 10px 20px; font-size: .85rem; flex-shrink: 0; }
+.btn-header { padding: 12px 24px; font-size: 1rem; flex-shrink: 0; }
 
 .hamburger { 
   display: none; 
@@ -517,8 +514,6 @@ p  { color: var(--ink-soft); }
   .section { padding: 80px 0; }
   .nav-desktop, .btn-header { display: none; }
   .hamburger { display: flex; }
-  .brand-text strong { font-size: .95rem; }
-  .brand-text em { font-size: .62rem; }
   .hero { padding: 130px 0 70px; }
   .hero-meta { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .hero-badge { left: 0; bottom: 14px; padding: 14px 16px; max-width: 90%; }
@@ -546,4 +541,42 @@ p  { color: var(--ink-soft); }
   .contact-card { flex-direction: column; text-align: center; }
   .contact-icon { margin: 0 auto; }
 }
+.area-header{
+    width:100%;
+    border:none;
+    background:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    text-align:left;
+    padding:0;
+    color:inherit;
+    font:inherit;
+}
 
+.area-icon{
+    font-size:32px;
+    font-weight:300;
+    transition:.3s;
+}
+
+.area-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .45s ease;
+}
+
+.area-content p{
+    margin-top:20px;
+    color:#666;
+    line-height:1.8;
+}
+
+.area.active .area-content{
+    max-height:300px;
+}
+
+.area.active .area-icon{
+    transform:rotate(45deg);
+}
